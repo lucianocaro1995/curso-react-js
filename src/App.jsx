@@ -1,13 +1,15 @@
 import './App.css';
-import Footer from './components/Footer';
 import Header from './components/Header';
-import Main from './components/Main';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import Footer from './components/Footer';
 
 function App() {
     return (
-        <div>
+        <div className='container-fluid'>
             <Header />
-            <Main />
+            <NavBar />
+            <ItemListContainer />
             <Footer />
         </div>
     );
