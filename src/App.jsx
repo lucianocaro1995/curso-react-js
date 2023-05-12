@@ -1,15 +1,15 @@
 import './App.css';
-import Header from './components/Header';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import Footer from './components/Footer';
+import Header from './Components/Header';
+import NavBar from './Components/NavBar/NavBar';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import Footer from './Components/Footer';
 
 function App() {
     return (
         <div className='container-fluid m-0 p-0'>
             <Header />
             <NavBar />
-            <ItemListContainer />
+            <ItemListContainer greeting={"Bienvenidos a mi ecommerce"}/>
             <Footer />
         </div>
     );
