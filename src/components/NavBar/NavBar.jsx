@@ -12,7 +12,7 @@ const NavBar = () => {
             </li>
             |
             <li className="nav-item px-2">
-                <a href='#' className='nav-link text-dark text-decoration-none'>Carrito</a>
+                <CartWidget />
             </li>
             |
         </ul>
