@@ -1,7 +1,15 @@
+import ItemListContainer from "./ItemListContainer";
+
 const NavBar = () => {
     return (
-        <div className="navBar">
-            <p>NavBar</p>
+        <div className="container-fluid navbar">
+            <div className="row bg-dark-subtle mx-auto">
+
+                <div className="col">
+                    <a href='#' className='text-dark'>Hombres</a> | <a href='#' className='text-dark'>Mujeres</a> | <a href='#' className='text-dark'>Carrito</a> | <a href='#' className='text-dark'>{ItemListContainer}</a>
+                </div>
+
+            </div>
         </div>
     )
 }

@@ -8,6 +8,10 @@
   background-color: blueviolet;
 }
 
+.navbar {
+  background-color: blue;
+}
+
 .main {
   padding: 40px;
   background-color: grey;
