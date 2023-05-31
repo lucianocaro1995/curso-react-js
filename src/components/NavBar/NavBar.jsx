@@ -6,16 +6,16 @@ const NavBar = () => {
     return (
         <div className="nav-container">
             <nav className="navbar">
-                <h1 className="navbar-titulo">Shop</h1>
+                <h1 className="navbar-titulo">Gamingshop</h1>
                 <ul className="navbar-ul">
                     <li className="navbar-li">
-                        <a href='#'>Ficción</a>
+                        <a href='#'>Notebooks</a>
                     </li>
                     <li className="navbar-li">
-                        <a href='#'>Misterio</a>
+                        <a href='#'>Tablets</a>
                     </li>
                     <li className="navbar-li">
-                        <a href='#'>Romance</a>
+                        <a href='#'>Celulares</a>
                     </li>
                 </ul>
                 <CartWidget />

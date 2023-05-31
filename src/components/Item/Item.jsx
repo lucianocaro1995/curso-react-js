@@ -1,15 +1,17 @@
 import { useContext } from "react"
 import { dataContext } from "../DataContext/DataContext"
 
-import "./Products.css"
+import "./Item.css"
 
-const Products = () => {
+const Item = () => {
     const { data } = useContext(dataContext);
 
     return data.map((product) => {
         return (
-            <div className="card">
-                <img src={product.img} alt="imagen del producto" />
+            <div className="card" key={product.id}>
+                <div className="card-imagen">
+                    <img src={product.img} alt="imagen del producto" />
+                </div>
                 <h3>{product.name}</h3>
                 <h4>{product.price}$</h4>
                 <button>ver detalle</button>
@@ -19,4 +21,6 @@ const Products = () => {
     })
 };
 
-export default Products
+export default Item
+
+//Acá estoy creando la card de cada producto

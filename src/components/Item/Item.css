@@ -10,6 +10,11 @@
     margin: 50px;
 }
 
+.card img {
+    width: 300px;
+    object-fit: cover;
+}
+
 .card button {
     border: none;
     outline: 0;

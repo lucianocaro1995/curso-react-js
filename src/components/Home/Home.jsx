@@ -1,6 +1,6 @@
 import NavBar from '../NavBar/NavBar'
 import Banner from '../Banner/Banner'
-import Products from '../Products/Products'
+import Item from '../Item/Item'
 import "./Home.css"
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
             <NavBar />
             <Banner />
             <div className='product-card-container'>
-                <Products />
+                <Item />
             </div>
         </>
     )
