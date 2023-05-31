@@ -10,7 +10,7 @@ const DataProvider = ({ children }) => {
         axios("data.json").then((resp) => setData(resp.data));
     }, [])
 
-    return <dataContext.Provider>{children}</dataContext.Provider>;
+    return <dataContext.Provider value={{ data }}>{children}</dataContext.Provider>;
 };
 
 export default DataProvider;

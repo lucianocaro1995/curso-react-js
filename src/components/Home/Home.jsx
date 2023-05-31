@@ -1,12 +1,16 @@
 import NavBar from '../NavBar/NavBar'
 import Banner from '../Banner/Banner'
+import Products from '../Products/Products'
 import "./Home.css"
 
 const Home = () => {
     return (
         <>
-        <NavBar />
-        <Banner />
+            <NavBar />
+            <Banner />
+            <div className='product-card-container'>
+                <Products />
+            </div>
         </>
     )
 }
