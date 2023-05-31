@@ -1,20 +1,21 @@
-import "./NavBar.css"
+import "./Header.css"
 import CartWidget from '../CartWidget/CartWidget'
+import { NavLink } from "react-router-dom"
 
-const NavBar = () => {
+const Header = () => {
     return (
         <div className="nav-container">
             <nav className="navbar">
-                <h1 className="navbar-titulo">Gamingshop</h1>
+                <NavLink to={'/'} className="navbar-titulo">Gamingshop</NavLink>
                 <ul className="navbar-ul">
                     <li className="navbar-li">
-                        <a href='#'>Notebooks</a>
+                        <NavLink to={'/categoria/notebooks'}>Notebooks</NavLink>
                     </li>
                     <li className="navbar-li">
-                        <a href='#'>Tablets</a>
+                        <NavLink to={'/categoria/tablets'}>Tablets</NavLink>
                     </li>
                     <li className="navbar-li">
-                        <a href='#'>Celulares</a>
+                        <NavLink to={'/categoria/celulares'}>Celulares</NavLink>
                     </li>
                 </ul>
                 <CartWidget />
@@ -23,4 +24,4 @@ const NavBar = () => {
     )
 }
 
-export default NavBar
+export default Header

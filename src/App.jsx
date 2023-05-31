@@ -1,19 +1,27 @@
 import "./App.css"
-import NavBar from "./Components/NavBar/NavBar"
+import Header from "./Components/Header/Header"
 import Banner from "./Components/Banner/Banner"
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"
+import Error404 from "./Components/Error404"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
 const App = () => {
     return (
         <>
-            <NavBar />
-            <Banner />
-            <div className='product-card-container'>
+            <BrowserRouter>
+                <Header />
+                <Banner />
+                <Routes>
+                    <Route path={"/"} element={<ItemListContainer />} />
+                    <Route path={"/categoria/:id"} element={<ItemListContainer />} />
+                    <Route path={"/item/:id"} element={<ItemDetailContainer />} />
+                    <Route path={"/*"} element={<Error404 />} />
+                </Routes>
                 <ItemListContainer />
-            </div>
-            <ItemDetailContainer />
+                <ItemDetailContainer />
+            </BrowserRouter>
         </>
     )
 }
