@@ -1,0 +1,42 @@
+.nav-container {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    background-color: #1b1b1b;
+}
+
+.navbar-titulo {
+    font-size: 30px;
+    justify-self: start;
+    margin-left: 20px;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+.navbar-ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-li {
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}

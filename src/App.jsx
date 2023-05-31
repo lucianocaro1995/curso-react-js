@@ -1,18 +1,22 @@
-import './App.css';
-import Header from './Components/Header';
-import NavBar from './Components/NavBar/NavBar';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-import Footer from './Components/Footer';
+import Home from './Components/Home/Home'
+import Cart from './Components/Cart/Cart'
+import DataProvider from './Components/DataContext/DataContext';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <div className='container-fluid m-0 p-0'>
-            <Header />
-            <NavBar />
-            <ItemListContainer greeting={"Bienvenidos a mi ecommerce"}/>
-            <Footer />
-        </div>
+        <DataProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/cart' element={<Cart />} />
+                </Routes>
+            </BrowserRouter>
+        </DataProvider>
     );
 }
 
 export default App;
+
+// <Route path='/category/:id' element={<ItemListContainer />} />
+// <Route path='/*' element={<Error404 />} />
