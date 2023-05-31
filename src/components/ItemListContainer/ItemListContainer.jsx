@@ -1,4 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount";
+import productos from "../Json/productos.json";
 
 const ItemListContainer = () => {
     return (

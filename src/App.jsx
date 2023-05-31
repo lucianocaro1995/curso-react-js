@@ -1,22 +1,25 @@
-import Home from './Components/Home/Home'
-import Cart from './Components/Cart/Cart'
-import DataProvider from './Components/DataContext/DataContext';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css"
+import NavBar from "./Components/NavBar/NavBar"
+import Banner from "./Components/Banner/Banner"
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 
-function App() {
+
+const App = () => {
     return (
-        <DataProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/cart' element={<Cart />} />
-                </Routes>
-            </BrowserRouter>
-        </DataProvider>
-    );
+        <>
+            <NavBar />
+            <Banner />
+            <div className='product-card-container'>
+                <ItemListContainer />
+            </div>
+        </>
+    )
 }
 
-export default App;
+export default App
 
-// <Route path='/category/:id' element={<ItemListContainer />} />
-// <Route path='/*' element={<Error404 />} />
+//Con la extensión ES 7 puedo escribir "rafce" y clickeando enter se crea la función flecha instantáneamente
+//No es necesario el "import React from 'react'". Si quiero lo puedo borrar y no pasa nada
+//Solamente un export por componente se puede utilizar
+//Necesito utilizar fragments <></> para poder utilizar más de un elemento padre en el mismo componente. Es como un contenedor
+//Tengo que poner el ItemListContainer

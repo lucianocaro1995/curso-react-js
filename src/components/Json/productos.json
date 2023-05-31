@@ -1,0 +1,56 @@
+[
+    {
+        "idx": 1,
+        "titulo": "Notebook Lenovo",
+        "descripcion": "Computadora gamer de alta gama",
+        "categoria": "Notebooks",
+        "precio": 10.000,
+        "imagen": "https://i.ibb.co/XLjvvF2/imagen1.jpg",
+        "cantidad": 1
+    },
+    {
+        "idx": 2,
+        "titulo": "Notebook Asus",
+        "descripcion": "Computadora gamer de alta gama",
+        "categoria": "Notebooks",
+        "precio": 10.000,
+        "imagen": "https://i.ibb.co/XLjvvF2/imagen1.jpg",
+        "cantidad": 1
+    },
+    {
+        "idx": 3,
+        "titulo": "Notebook Apple",
+        "descripcion": "Computadora gamer de alta gama",
+        "categoria": "Notebooks",
+        "precio": 10.000,
+        "imagen": "https://i.ibb.co/XLjvvF2/imagen1.jpg",
+        "cantidad": 1
+    },
+    {
+        "idx": 4,
+        "titulo": "Celular LG",
+        "descripcion": "Computadora gamer de alta gama",
+        "categoria": "Celulares",
+        "precio": 10.000,
+        "imagen": "https://i.ibb.co/XLjvvF2/imagen1.jpg",
+        "cantidad": 1
+    },
+    {
+        "idx": 5,
+        "titulo": "Tablet Apple",
+        "descripcion": "Computadora gamer de alta gama",
+        "categoria": "Tablets",
+        "precio": 10.000,
+        "imagen": "https://i.ibb.co/XLjvvF2/imagen1.jpg",
+        "cantidad": 1
+    },
+    {
+        "idx": 6,
+        "titulo": "Celular Samsung",
+        "descripcion": "Computadora gamer de alta gama",
+        "categoria": "Celulares",
+        "precio": 10.000,
+        "imagen": "https://i.ibb.co/XLjvvF2/imagen1.jpg",
+        "cantidad": 1
+    }
+]
