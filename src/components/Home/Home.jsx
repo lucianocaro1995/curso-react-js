@@ -2,6 +2,7 @@ import NavBar from '../NavBar/NavBar'
 import Banner from '../Banner/Banner'
 import Item from '../Item/Item'
 import "./Home.css"
+import ItemListContainer from '../ItemListContainer/ItemListContainer'
 
 const Home = () => {
     return (
@@ -9,7 +10,7 @@ const Home = () => {
             <NavBar />
             <Banner />
             <div className='product-card-container'>
-                <Item />
+                <ItemListContainer />
             </div>
         </>
     )
@@ -21,3 +22,4 @@ export default Home
 //No es necesario el "import React from 'react'". Si quiero lo puedo borrar y no pasa nada
 //Solamente un export por componente se puede utilizar
 //Necesito utilizar fragments <></> para poder utilizar más de un elemento padre en el mismo componente. Es como un contenedor
+//Tengo que poner el ItemListContainer
