@@ -2,6 +2,7 @@ import "./App.css"
 import NavBar from "./Components/NavBar/NavBar"
 import Banner from "./Components/Banner/Banner"
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
             <div className='product-card-container'>
                 <ItemListContainer />
             </div>
+            <ItemDetailContainer />
         </>
     )
 }

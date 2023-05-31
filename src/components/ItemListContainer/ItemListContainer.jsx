@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from "../ItemList/ItemList";
-import ItemCount from "../ItemCount/ItemCount";
 import productos from "../Json/productos.json";
 
 const ItemListContainer = () => {
@@ -23,9 +22,10 @@ const ItemListContainer = () => {
         <div>
             <h2>Lista de productos</h2>
             <ItemList productos={items} />
-            <ItemCount stock={12} />
         </div>
     );
 };
 
 export default ItemListContainer;
+
+// Acá recibimos un array de productos y se lo mandamos a ItemList
