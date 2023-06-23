@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="nav-container">
             <nav className="navbar">
-                <NavLink to={'/'} className="navbar-titulo">Gamingshop</NavLink>
+                <NavLink to={'/'} className="navbar-titulo">La cueva gamer</NavLink>
                 <ul className="navbar-ul">
                     <li className="navbar-li">
                         <NavLink to={'/categoria/notebooks'}>Notebooks</NavLink>

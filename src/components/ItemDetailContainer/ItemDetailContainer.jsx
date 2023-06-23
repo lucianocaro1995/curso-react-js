@@ -1,13 +1,17 @@
-import { useEffect } from "react";
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import productos from "../Json/productos.json";
+//import productos from "../Json/productos.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
-    const {id} = useParams();
+    const { id } = useParams();
 
+
+
+    //Accedo a los productos desde el archivo .json
+    /*
     useEffect(() => {
         const promesa = new Promise((resolve) => {
             setTimeout(() => {
@@ -19,8 +23,25 @@ const ItemDetailContainer = () => {
             setItem(data);
         });
     }, [id]);
+    */
+
+
+
+
+
+    //Accedo a un producto desde firebase. Es decir, accedo a un documento
+    useEffect(() => {
+        const db = getFirestore();
+        const producto = doc(db, "productos", id);
+        getDoc(producto).then(resultado => {
+            setItem({id:resultado.id, ...resultado.data()})
+        });
+    }, [id])
+
+
 
     return (
+        //Llamamos al componente itemDetail, le damos un prop producto y un estado item
         <>
             <ItemDetail producto={item} />
         </>
