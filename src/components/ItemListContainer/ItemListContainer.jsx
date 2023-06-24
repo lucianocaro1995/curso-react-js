@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading";
+import Footer from "../Footer/Footer";
 import { NavLink } from "react-router-dom"
 
 //1)Este import es para acceder a los productos desde el archivo .json
@@ -153,17 +154,44 @@ const ItemListContainer = () => {
 
     return (
         //Si está cargando mostrame el componente Loading, sino mostrame ItemList
-        <div>
-            <h2 className="titulo-productos">Lista de productos</h2>
-            <ul className="categoria">
-                <li className="categoria-li">
-                    <NavLink to={'/categoria/notebooks'}>Notebooks</NavLink>
+        <div className="item-list-container">
+            <h2 className="titulo-productos">Compra por categorías</h2>
+            <ul className="categorias">
+                <li className="categorias-li">
+                    <NavLink className={"categoria-link"} to={'/categoria/notebooks'}>
+                        <img src="laptop.png" alt="" />
+                        <span className="categoria-span">Notebooks</span>
+                    </NavLink>
                 </li>
-                <li className="categoria-li">
-                    <NavLink to={'/categoria/tablets'}>Tablets</NavLink>
+                <li className="categorias-li">
+                    <NavLink className={"categoria-link"} to={'/categoria/tablets'}>
+                        <img src="tablet.png" alt="" />
+                        <span className="categoria-span">Tablets</span>
+                    </NavLink>
                 </li>
-                <li className="categoria-li">
-                    <NavLink to={'/categoria/celulares'}>Celulares</NavLink>
+                <li className="categorias-li">
+                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
+                        <img src="tv.png" alt="" />
+                        <span className="categoria-span">Tv</span>
+                    </NavLink>
+                </li>
+                <li className="categorias-li">
+                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
+                        <img src="monitor.png" alt="" />
+                        <span className="categoria-span">Monitores</span>
+                    </NavLink>
+                </li>
+                <li className="categorias-li">
+                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
+                        <img src="pc.png" alt="" />
+                        <span className="categoria-span">Pc</span>
+                    </NavLink>
+                </li>
+                <li className="categorias-li">
+                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
+                        <img src="smartphone.png" alt="" />
+                        <span className="categoria-span">Celulares</span>
+                    </NavLink>
                 </li>
             </ul>
             <div className="seccion-productos">
@@ -179,6 +207,7 @@ const ItemListContainer = () => {
                 </div>
                 */}
             </div>
+            <Footer />
         </div>
     );
 };
