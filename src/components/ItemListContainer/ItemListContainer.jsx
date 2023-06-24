@@ -2,6 +2,7 @@ import "./ItemListContainer.css";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
+import Loading from "../Loading/Loading";
 
 //1)Este import es para acceder a los productos desde el archivo .json
 //import productos from "../Json/productos.json";
@@ -13,10 +14,11 @@ import ItemList from "../ItemList/ItemList";
 //import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 //4)Este import es para acceder a una colección de documentos utilizando un filtro
-//import { getFirestore, collection, getDocs, where, query } from "firebase/firestore";
+import { getFirestore, collection, getDocs, where, query } from "firebase/firestore";
 
 //5)Este import es para el proceso de importación de los productos en mi archivo .json a firebase
-import { getFirestore, collection, getDocs, where, query, addDoc } from "firebase/firestore";
+//El addDoc me permite insertar un nuevo documento a mi base de datos de firebase
+//import { getFirestore, collection, getDocs, where, query, addDoc } from "firebase/firestore";
 
 
 
@@ -24,6 +26,7 @@ import { getFirestore, collection, getDocs, where, query, addDoc } from "firebas
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
 
@@ -84,16 +87,19 @@ const ItemListContainer = () => {
     useEffect(() => {
         const db = getFirestore();
         const itemsCollection = collection(db, "productos");
+        //Filtro
+        const q = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
 
-        getDocs(itemsCollection).then(resultado => {
+        getDocs(q).then(resultado => {
             if (resultado.size > 0) {
-                setItems(resultado.docs.map(producto => ({ id: producto.id, ...producto.data() })))
+                //Cuando se completa el setItems le vamos a cambiar el estado, el setLoading lo vamos a pasar a false
+                setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
+                setLoading(false);
             } else {
-                console.error("Error! No se encontraron productos en la colección");
+                console.error("Error! No se encontraron productos en la colección!");
             }
         });
-    }, []);
-    
+    }, [id]);
 
 
 
@@ -126,7 +132,7 @@ const ItemListContainer = () => {
 
 
 
-    //5) Proceso de importación de los productos en mi archivo .json a firebase
+    //5)Proceso de importación de los productos en mi archivo .json a firebase
     //Le pongo el array [] para que solamente se ejecute una vez durante el montaje de mi componente
     //Luego de que carguen los componentes en Firestore, ya puedo comentar o deshabilitar este useEffect. Hago esto para que no se vuelvan a cargar en Firestore cada vez que borro o re-escribo algo
     /*
@@ -145,10 +151,11 @@ const ItemListContainer = () => {
 
 
     return (
+        //Si está cargando mostrame el componente Loading, sino mostrame ItemList
         <div>
             <h2 className="tituloProductos">Lista de productos</h2>
             <div className="seccionProductos">
-                <ItemList productos={items} />
+                {loading ? <Loading /> : <ItemList productos={items} />}
                 {/*
                 //Cuando accedo a solamente un producto, debo escribir su html acá y deshabilitar o borrar el itemList de arriba ya que es un array de productos
                 <div>

@@ -2,15 +2,22 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //import productos from "../Json/productos.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loading from "../Loading/Loading";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
+    
+    //Hook useState que nos permite almacenar y actualizar información en mis componentes
     const [item, setItem] = useState({});
+    //Hook useState que nos permite cargar el loading
+    const [loading, setLoading] = useState(true);
+    //Hook useParams nos permite obtener y utilizar los parámetros de la URL en nuestros componentes
     const { id } = useParams();
 
 
 
     //Accedo a los productos desde el archivo .json
+    //Idx le puse en el .json. Id le puse en el firebase (para diferenciarlos)
     /*
     useEffect(() => {
         const promesa = new Promise((resolve) => {
@@ -34,7 +41,9 @@ const ItemDetailContainer = () => {
         const db = getFirestore();
         const producto = doc(db, "productos", id);
         getDoc(producto).then(resultado => {
-            setItem({id:resultado.id, ...resultado.data()})
+            //Cuando se completa el setItems le vamos a cambiar el estado, el setLoading lo vamos a pasar a false
+            setItem({id:resultado.id, ...resultado.data()});
+            setLoading(false);
         });
     }, [id])
 
@@ -42,8 +51,9 @@ const ItemDetailContainer = () => {
 
     return (
         //Llamamos al componente itemDetail, le damos un prop producto y un estado item
+        //Si está cargando mostrame el componente Loading, sino mostrame ItemDetail
         <>
-            <ItemDetail producto={item} />
+            {loading ? <Loading /> : <ItemDetail producto={item} />}
         </>
     )
 }
