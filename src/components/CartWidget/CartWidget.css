@@ -1,7 +1,26 @@
-.verCarrito {
+.carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-carrito {
     font-size: 25px;
-    margin-right: 20px;
-    margin-top: 4vh;
+    margin-left: 10px;
     cursor: pointer;
     text-decoration: none;
+}
+
+.contador-carrito {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: bold;
+    font-weight: 1000;
+    font-size: 20px;
 }

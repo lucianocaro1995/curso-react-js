@@ -9,7 +9,7 @@ const Cart = () => {
     //Tenemos que hacer el renderizado del carrito con if para cuando está vacío, y return cuando tiene items dentro
     if (cartTotal() === 0) {
         return (
-            <div className="carritoVacio">
+            <div className="carrito-vacio">
                 <p>No se encontraron productos en el Carrito!</p>
             </div>
         )
@@ -17,15 +17,15 @@ const Cart = () => {
 
     //Tengo que armar el html del carrito acá
     return (
-        <div className="carritoModal">
+        <div className="carrito">
 
 
-            <div className="carritoHeader">
+            <div className="carrito-header">
                 <h1>Carrito 🛒</h1>
             </div>
 
 
-            <div className="carritoContent">
+            <div className="carrito-content">
             </div>
 
 

@@ -4,22 +4,14 @@ import { NavLink } from "react-router-dom"
 
 const Header = () => {
     return (
-        <div className="nav-container">
-            <nav className="navbar">
-                <NavLink to={'/'} className="navbar-titulo">La cueva gamer</NavLink>
-                <ul className="navbar-ul">
-                    <li className="navbar-li">
-                        <NavLink to={'/categoria/notebooks'}>Notebooks</NavLink>
-                    </li>
-                    <li className="navbar-li">
-                        <NavLink to={'/categoria/tablets'}>Tablets</NavLink>
-                    </li>
-                    <li className="navbar-li">
-                        <NavLink to={'/categoria/celulares'}>Celulares</NavLink>
-                    </li>
-                </ul>
+        <div className="header">
+            <div className="header-hijo">
+                <NavLink className={"header-navlink"} to={'/'}>
+                    <img className="header-logo" src="logo.png" alt="Imagen del logo" />
+                    <h2 className="header-titulo">La cueva gamer</h2>
+                </NavLink>
                 <CartWidget />
-            </nav>
+            </div>
         </div>
     )
 }

@@ -4,12 +4,7 @@
     box-sizing: border-box;
 }
 
-.product-card-container {
-    display: flex;
-    margin: 50px;
-    text-align: center;
-    align-items: center;
-}
+
 
 /* Con esto personalizo el scrollbar */
 /*
@@ -36,11 +31,9 @@ body::-webkit-scrollbar-thumb {
 
 
 html {
-    font-family: 'Carter One', cursive;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.25rem;
+    font-size: 20px;
 }
 */
-
-/* Medida promedio de font-size utilizada en esta página es 1.25rem */

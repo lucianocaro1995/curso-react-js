@@ -7,15 +7,13 @@ const CartWidget = () => {
     //Recibimos el método cartTotal del componente CartContext
     const { cartTotal } = useContext(CartContext);
 
+    //Si cartTotal es mayor a 0 no se muestra el contador-carrito
     return (
-        //Si cartTotal es mayor a 0, mostrame el render de todo esto... "Sino" o "else" que se escribe con 2 puntos (:), no me muestres nada ("")
-        (cartTotal() > 0) ?
-            <Link to={"/cart"}>
-                <p className="verCarrito">🛒</p>
-                <span className="indicadorCarrito">{cartTotal()}</span>
-            </Link>
-            : ""
-    )
+        <Link className="carrito" to={"/cart"}>
+            {cartTotal() > 0 && <span className="contador-carrito">{cartTotal()}</span>}
+            <p className="item-carrito">🛒</p>
+        </Link>
+    );
 }
 
 export default CartWidget

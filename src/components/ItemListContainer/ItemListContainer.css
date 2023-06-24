@@ -1,11 +1,8 @@
-/* PRODUCTOS */
-/* El font-weight de esta letra en modo normal creo que es 1000, en este título lo reduzco a 400 o normal */
-.tituloProductos {
-    font-family: 'Carter One', cursive;
+.titulo-productos {
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: normal;
-    font-size: 1.6rem;
-    position: relative;
+    font-weight: bold;
+    font-size: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +16,14 @@
     margin: 0;
 }
 
-.seccionProductos {
+.seccion-productos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #000033;
-    padding-top: 0em;
-    padding-bottom: 0em;
-    padding-right: 5em;
-    padding-left: 5em;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 150px;
+    padding-left: 150px;
 }

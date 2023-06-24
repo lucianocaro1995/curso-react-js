@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading";
+import { NavLink } from "react-router-dom"
 
 //1)Este import es para acceder a los productos desde el archivo .json
 //import productos from "../Json/productos.json";
@@ -83,7 +84,7 @@ const ItemListContainer = () => {
     //3)Accedo a varios productos desde firebase. Es decir, accedo a una colección de documentos
     //Es similar a acceder a un sólo producto
     //Tengo que hacer el paso 5) para cargar mis productos desde .json a Firebase y luego este paso para mostrarlos en la app
-    
+
     useEffect(() => {
         const db = getFirestore();
         const itemsCollection = collection(db, "productos");
@@ -93,7 +94,7 @@ const ItemListContainer = () => {
         getDocs(q).then(resultado => {
             if (resultado.size > 0) {
                 //Cuando se completa el setItems le vamos a cambiar el estado, el setLoading lo vamos a pasar a false
-                setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
+                setItems(resultado.docs.map(producto => ({ id: producto.id, ...producto.data() })));
                 setLoading(false);
             } else {
                 console.error("Error! No se encontraron productos en la colección!");
@@ -153,8 +154,19 @@ const ItemListContainer = () => {
     return (
         //Si está cargando mostrame el componente Loading, sino mostrame ItemList
         <div>
-            <h2 className="tituloProductos">Lista de productos</h2>
-            <div className="seccionProductos">
+            <h2 className="titulo-productos">Lista de productos</h2>
+            <ul className="categoria">
+                <li className="categoria-li">
+                    <NavLink to={'/categoria/notebooks'}>Notebooks</NavLink>
+                </li>
+                <li className="categoria-li">
+                    <NavLink to={'/categoria/tablets'}>Tablets</NavLink>
+                </li>
+                <li className="categoria-li">
+                    <NavLink to={'/categoria/celulares'}>Celulares</NavLink>
+                </li>
+            </ul>
+            <div className="seccion-productos">
                 {loading ? <Loading /> : <ItemList productos={items} />}
                 {/*
                 //Cuando accedo a solamente un producto, debo escribir su html acá y deshabilitar o borrar el itemList de arriba ya que es un array de productos
