@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 //import productos from "../Json/productos.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../Loading/Loading";
-import Header2 from "../Header/Header2";
+import Header from "../Header/Header";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
@@ -54,10 +54,10 @@ const ItemDetailContainer = () => {
     return (
         //Llamamos al componente itemDetail, le damos un prop producto y un estado item
         //Si está cargando mostrame el componente Loading, sino mostrame ItemDetail
-        <div className="item-detail-container">
-            <Header2 />
+        <>
+            <Header />
             {loading ? <Loading /> : <ItemDetail producto={item} />}
-        </div>
+        </>
     )
 }
 

@@ -30,13 +30,15 @@ const ItemDetail = ({ producto }) => {
 
     return (
         <div className="detalles">
-            <img src={item.imagen} alt={item.titulo} className="detalles-imagen" />
-            <div className="detalles-escrito">
-                <span className="detalles-categoria">Categoría: {item.categoria}</span>
-                <span className="detalles-titulo">{item.titulo}</span>
-                <span className="detalles-detalles">{item.descripcion}</span>
-                <span className="detalles-precio">$ {item.precio}</span>
-                <ItemCount stock={item.stock} onAdd={onAdd} className="item-count" />
+            <div className="detalles-hijo">
+                <img src={item.imagen} alt={item.titulo} className="detalles-imagen" />
+                <div className="detalles-escrito">
+                    <span className="detalles-categoria">Categoría: {item.categoria}</span>
+                    <span className="detalles-titulo">{item.titulo}</span>
+                    <span className="detalles-detalles">{item.descripcion}</span>
+                    <span className="detalles-precio">$ {item.precio}</span>
+                    <ItemCount stock={item.stock} onAdd={onAdd} className="item-count" />
+                </div>
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ const CartWidget = () => {
 
     //Si cartTotal es mayor a 0 no se muestra el contador-carrito
     return (
-        <Link className="carrito" to={"/cart"}>
+        <Link className="ver-carrito" to={"/cart"}>
             {cartTotal() > 0 && <span className="contador-carrito">{cartTotal()}</span>}
             <p className="item-carrito">🛒</p>
         </Link>
