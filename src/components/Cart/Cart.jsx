@@ -16,9 +16,6 @@ const Cart = () => {
                 <div className="carrito">
 
                     <div className="carrito-header">
-                        <span className="carrito-header-producto">Producto</span>
-                        <span className="carrito-header-cantidad">Cantidad</span>
-                        <span className="carrito-header-precio">Precio</span>
                     </div>
 
 
@@ -66,7 +63,7 @@ const Cart = () => {
 
                 <div className="carrito-footer">
                     <button className="carrito-footer-vaciar" onClick={() => { clear() }} title="Vaciar Carrito">Vaciar Carrito</button>
-                    <Link className="carrito-footer-finalizar" tp={"/checkout"}>Finalizar compra</Link>
+                    <Link className="carrito-footer-finalizar" to={"/checkout"}>Finalizar compra</Link>
                     <span className="carrito-footer-total">Total a Pagar: ${sumTotal()}</span>
                 </div>
             </div>
