@@ -1,6 +1,4 @@
 import "./App.css"
-import Header from "./Components/Header/Header"
-import Banner from "./Components/Banner/Banner"
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"
 import Cart from "./Components/Cart/Cart"
@@ -14,7 +12,6 @@ const App = () => {
         <>
             <CartContextProvider>
                 <BrowserRouter>
-                    <Header />
                     <Routes>
                         <Route path={"/"} element={<Home />} />
                         <Route path={"/categoria/:id"} element={<ItemListContainer />} />
@@ -31,7 +28,6 @@ const App = () => {
 const Home = () => {
     return (
         <>
-            <Banner />
             <ItemListContainer />
         </>
     );

@@ -1,12 +1,14 @@
+import "./ItemDetailContainer.css"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //import productos from "../Json/productos.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../Loading/Loading";
+import Header2 from "../Header/Header2";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-    
+
     //Hook useState que nos permite almacenar y actualizar información en mis componentes
     const [item, setItem] = useState({});
     //Hook useState que nos permite cargar el loading
@@ -42,7 +44,7 @@ const ItemDetailContainer = () => {
         const producto = doc(db, "productos", id);
         getDoc(producto).then(resultado => {
             //Cuando se completa el setItems le vamos a cambiar el estado, el setLoading lo vamos a pasar a false
-            setItem({id:resultado.id, ...resultado.data()});
+            setItem({ id: resultado.id, ...resultado.data() });
             setLoading(false);
         });
     }, [id])
@@ -52,9 +54,10 @@ const ItemDetailContainer = () => {
     return (
         //Llamamos al componente itemDetail, le damos un prop producto y un estado item
         //Si está cargando mostrame el componente Loading, sino mostrame ItemDetail
-        <>
+        <div className="item-detail-container">
+            <Header2 />
             {loading ? <Loading /> : <ItemDetail producto={item} />}
-        </>
+        </div>
     )
 }
 

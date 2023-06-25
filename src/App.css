@@ -4,20 +4,14 @@
     box-sizing: border-box;
 }
 
-
-
-/* Con esto personalizo el scrollbar */
-/*
 body::-webkit-scrollbar {
     background-color: #000814;
-    width: 0.6em;
+    width: 9px;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #ffd60a;
-    border-radius: 0.2em;
+    background-color: #ff64f7;
 }
-*/
 
 /* Si quiero usar una fuente descargada utilizo @font-face, si quiero usar una fuente de google-fonts simplemente pego el link en el html y utilizo html {} en el scss */
 /*

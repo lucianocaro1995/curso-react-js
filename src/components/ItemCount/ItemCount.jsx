@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./ItemCount.css"
 
 //Ponemos onAdd como prop y se la mandamos a la función en línea 27
 const ItemCount = ({ stock, onAdd }) => {
@@ -43,14 +44,14 @@ const ItemCount = ({ stock, onAdd }) => {
     return (
         //Utilicé una técnica de rendering en el div que lleva los botones finalizar compra y agregar al carrito
         //Si itemAdded está en false que me muestre el botón agregar al carrito. Si le doy agregar, que me lleve a finalizar compra
-        <div className="contador-padre">
-            <div className="contador-hijo">
+        <div className="item-count">
+            <div className="item-count-contador">
                 <button className="restar" onClick={decrementarStock}>-</button>
-                <div>{items}</div>
+                <div className="cantidad">{items}</div>
                 <button className="sumar" onClick={incrementarStock}>+</button>
             </div>
-            <div className="contador-hijo">
-                {itemAdded ? <Link to={"/cart"}>Finalizar compra</Link> : <button className="agregar-carrito" onClick={addToCart}>Agregar al carrito</button>}
+            <div className="item-count-boton">
+                {itemAdded ? <Link className="finalizar-compra" to={"/cart"}>Finalizar compra</Link> : <button className="agregar-carrito" onClick={addToCart}>Agregar al carrito</button>}
             </div>
         </div>
     );

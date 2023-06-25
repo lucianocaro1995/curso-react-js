@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header">
             <div className="header-hijo">
                 <NavLink className={"header-navlink"} to={'/'}>
-                    <img className="header-logo" src="logo.png" alt="Imagen del logo" />
+                    <img className="header-logo" src="https://i.ibb.co/2vXM4s5/logo.png" alt="Imagen del logo" />
                     <h2 className="header-titulo">La cueva gamer</h2>
                 </NavLink>
                 <CartWidget />

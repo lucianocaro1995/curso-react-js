@@ -4,7 +4,9 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading";
 import Footer from "../Footer/Footer";
-import { NavLink } from "react-router-dom"
+import Navbar from "../Navbar/Navbar";
+import Header from "../Header/Header";
+import Banner from "../Banner/Banner";
 
 //1)Este import es para acceder a los productos desde el archivo .json
 //import productos from "../Json/productos.json";
@@ -154,61 +156,18 @@ const ItemListContainer = () => {
 
     return (
         //Si está cargando mostrame el componente Loading, sino mostrame ItemList
-        <div className="item-list-container">
-            <h2 className="titulo-productos">Compra por categorías</h2>
-            <ul className="categorias">
-                <li className="categorias-li">
-                    <NavLink className={"categoria-link"} to={'/categoria/notebooks'}>
-                        <img src="laptop.png" alt="" />
-                        <span className="categoria-span">Notebooks</span>
-                    </NavLink>
-                </li>
-                <li className="categorias-li">
-                    <NavLink className={"categoria-link"} to={'/categoria/tablets'}>
-                        <img src="tablet.png" alt="" />
-                        <span className="categoria-span">Tablets</span>
-                    </NavLink>
-                </li>
-                <li className="categorias-li">
-                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
-                        <img src="tv.png" alt="" />
-                        <span className="categoria-span">Tv</span>
-                    </NavLink>
-                </li>
-                <li className="categorias-li">
-                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
-                        <img src="monitor.png" alt="" />
-                        <span className="categoria-span">Monitores</span>
-                    </NavLink>
-                </li>
-                <li className="categorias-li">
-                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
-                        <img src="pc.png" alt="" />
-                        <span className="categoria-span">Pc</span>
-                    </NavLink>
-                </li>
-                <li className="categorias-li">
-                    <NavLink className={"categoria-link"} to={'/categoria/celulares'}>
-                        <img src="smartphone.png" alt="" />
-                        <span className="categoria-span">Celulares</span>
-                    </NavLink>
-                </li>
-            </ul>
-            <div className="seccion-productos">
-                {loading ? <Loading /> : <ItemList productos={items} />}
-                {/*
-                //Cuando accedo a solamente un producto, debo escribir su html acá y deshabilitar o borrar el itemList de arriba ya que es un array de productos
-                <div>
-                    <img src={productos.imagen} alt={productos.nombre} />
+        <>
+            <Header />
+            <Banner />
+            <div className="item-list-container">
+                <h2 className="titulo-productos">Compra por categorías</h2>
+                <Navbar />
+                <div className="seccion-productos">
+                    {loading ? <Loading /> : <ItemList productos={items} />}
                 </div>
-                <div>
-                    <h2>{productos.nomobre}</h2>
-                    <p>${productos.precio}</p>
-                </div>
-                */}
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </>
     );
 };
 

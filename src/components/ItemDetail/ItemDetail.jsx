@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../Context/CartContext";
+import "./ItemDetail.css"
 
 const ItemDetail = ({ producto }) => {
     //Vamos a necesitar del contexto la función addItem. Esta función la cree en el componente CartContext línea 20
@@ -28,12 +29,15 @@ const ItemDetail = ({ producto }) => {
 
 
     return (
-        <div className="detail">
-            <img src={item.imagen} alt={item.titulo} />
-            <h3>{item.titulo}</h3>
-            <h4>{item.descripcion}</h4>
-            <h4>$ {item.precio}</h4>
-            <ItemCount stock={item.stock} onAdd={onAdd} />
+        <div className="detalles">
+            <img src={item.imagen} alt={item.titulo} className="detalles-imagen" />
+            <div className="detalles-escrito">
+                <span className="detalles-categoria">Categoría: {item.categoria}</span>
+                <span className="detalles-titulo">{item.titulo}</span>
+                <span className="detalles-detalles">{item.descripcion}</span>
+                <span className="detalles-precio">$ {item.precio}</span>
+                <ItemCount stock={item.stock} onAdd={onAdd} className="item-count" />
+            </div>
         </div>
     );
 };
