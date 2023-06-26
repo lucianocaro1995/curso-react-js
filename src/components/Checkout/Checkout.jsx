@@ -1,6 +1,9 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import Cart from "../Cart/Cart";
+import "./Checkout.css"
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
@@ -57,40 +60,44 @@ const Checkout = () => {
         batch.commit(); */
     }
 
-    //Formulario pidiendo nombre, email, telefono y abajo un boton de submit. Al costado los productos seleccionados
-    //En los inputs podemos utilizar el evento onInput para que cada vez que tipeamos, vamos almacenando el valor en un estado
+    //Formulario pidiendo nombre, email, telefono y abajo un boton de submit
+    //En los inputs podemos utilizar el evento onInput para que cada vez que tipeamos, así vamos almacenando el valor en un estado
     //Capturamos el evento onInput y se lo vamos a pasar a la función modificadora (setNombre) del useState
     //E es evento, target es un método con el cual determinamos de dónde se disparó el evento, value es la propiedad que captura el valor
     return (
-        <div className="checkout">
-            <div className="checkout-hijo">
-                <h1 className="checkout-titulo">Generar orden de compra</h1>
-                <button className="checkout-salir"> ❌ </button>
+        <>
+            <Cart />
+            <div className="checkout">
+                <div className="checkout-hijo">
+                    
+                        <h1 className="checkout-titulo">¡Generar orden de compra!</h1>
+                        <Link className="checkout-salir" to={"/cart"}> ❌ </Link>
+                    
 
-                <form>
-                    <div>
-                        <label>Nombre</label>
-                        <input type="text" onInput={(e) => { setNombre(e.target.value) }} />
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="text" onInput={(e) => { setEmail(e.target.value) }} />
-                    </div>
-                    <div>
-                        <label>Teléfono</label>
-                        <input type="text" onInput={(e) => { setTelefono(e.target.value) }} />
-                    </div>
-                    <button type="button" onClick={generarOrden}>Generar Orden</button>
-                </form>
+                    <form className="checkout-form">
+                        <div className="checkout-form-div">
+                            <label className="checkout-label">Nombre</label>
+                            <input className="checkout-input" type="text" onInput={(e) => { setNombre(e.target.value) }} />
+                        </div>
+                        <div className="checkout-form-div">
+                            <label className="checkout-label">Email</label>
+                            <input className="checkout-input" type="text" onInput={(e) => { setEmail(e.target.value) }} />
+                        </div>
+                        <div className="checkout-form-div">
+                            <label className="checkout-label">Teléfono</label>
+                            <input className="checkout-input" type="text" onInput={(e) => { setTelefono(e.target.value) }} />
+                        </div>
+                        <button className="checkout-generar-orden" type="button" onClick={generarOrden}>Generar Orden</button>
+                    </form>
 
-                <div>
-                    {orderId ? <div>
-                        <h1>Gracias por tu Compra!</h1>
-                        <p>Tu Orden de Compra es: {orderId}</p>
-                    </div> : ""}
+                    <div>
+                        {orderId ? <div>
+                            <h2 className="checkout-realizado">Gracias por tu Compra! Tu Orden de Compra es: {orderId}</h2>
+                        </div> : ""}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
