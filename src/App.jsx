@@ -1,11 +1,11 @@
 import "./App.css"
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
-import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"
-import Cart from "./Components/Cart/Cart"
-import Checkout from "./Components/Checkout/Checkout"
-import Error404 from "./Components/Error404"
+import ItemListContainer from "./componentsAJUSTE/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./componentsAJUSTE/ItemDetailContainer/ItemDetailContainer"
+import Cart from "./componentsAJUSTE/Cart/Cart"
+import Checkout from "./componentsAJUSTE/Checkout/Checkout"
+import Error404 from "./componentsAJUSTE/Error404"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import CartContextProvider from "./Components/Context/CartContext"
+import CartContextProvider from "./componentsAJUSTE/Context/CartContext"
 
 
 const App = () => {

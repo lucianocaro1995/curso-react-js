@@ -1,0 +1,220 @@
+.carrito {
+    background-image: linear-gradient(90deg, black, #0c0a3e, black);
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Header del carrito*/
+.carrito-header {
+    width: 80%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    background-color: #ff64f7;
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+}
+
+.carrito-header-producto {
+    margin-right: 0;
+    margin-left: 20px;
+    min-width: 650px;
+    max-width: 650px;
+}
+
+.carrito-header-cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.carrito-header-precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+
+
+
+
+/*Contenido del carrito*/
+.carrito-content {
+    width: 80%;
+    margin: auto;
+    flex-grow: 1;
+    margin-right: auto;
+}
+
+.carrito-content-item {
+    border-bottom: 2px solid #ff64f7;
+    display: flex;
+    align-items: center;
+}
+
+.carrito-content-img {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 225px;
+    height: 225px;
+}
+
+.carrito-content-titulo {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+    color: #ff64f7;
+    margin-right: 0;
+    margin-left: 20px;
+    min-width: 430px;
+    max-width: 430px;
+}
+
+
+
+.carrito-content-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+    color: #ff64f7;
+    margin-right: auto;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.carrito-content-precio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+    color: #ff64f7;
+    margin-right: auto;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.carrito-content-eliminar {
+    font-size: 30px;
+    margin-left: auto;
+    cursor: pointer;
+    /*Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:*/
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    /*Transición para el hover*/
+    transition: all 0.5s ease;
+}
+
+.carrito-content-eliminar:hover {
+    transform: scale(1.5);
+}
+
+
+
+
+
+/*Footer del carrito*/
+.carrito-footer {
+    height: 75px;
+    width: 80%;
+    margin: auto;
+    background-color: #ff64f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito-footer-vaciar {
+    flex: 1;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+    color: #000033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /*Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:*/
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    /*Transición para el hover*/
+    transition: all 0.5s ease;
+}
+
+.carrito-footer-total {
+    flex: 1;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+    color: #000033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito-footer-finalizar {
+    flex: 1;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.5px;
+    color: #000033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /*Transición para el hover*/
+    transition: all 0.5s ease;
+}
+
+.carrito-footer-vaciar:hover {
+    transform: scale(1.25);
+}
+
+.carrito-footer-finalizar:hover {
+    transform: scale(1.25);
+}
+
+
+
+
+
+/*Carrito vacío*/
+.carrito-content2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.carrito-content-vacio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: #ff64f7;
+}
