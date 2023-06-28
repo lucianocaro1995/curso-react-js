@@ -12,22 +12,3 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background-color: #ff64f7;
 }
-
-/* Si quiero usar una fuente descargada utilizo @font-face, si quiero usar una fuente de google-fonts simplemente pego el link en el html y utilizo html {} en el scss */
-/*
-@font-face {
-    font-family: 'Renogare';
-    src: url("../Renogare.ttf") format("truetype");
-    font-style: normal;
-    font-weight: bold;
-}
-
-
-
-html {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-}
-*/
