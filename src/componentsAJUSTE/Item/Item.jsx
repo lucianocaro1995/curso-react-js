@@ -16,7 +16,7 @@ const Item = ({ producto }) => {
                     </div>
                 </div>
                 <div className="card-boton">
-                    <Link to={"/item/" + producto.id} style={{ textDecoration: 'none' }}><span className="card-span">Ver producto</span> </Link>
+                    <span className="card-span">Ver producto</span>
                 </div>
             </div>
         </Link>
@@ -24,6 +24,3 @@ const Item = ({ producto }) => {
 }
 
 export default Item
-
-//Acá creo la card de cada producto
-//Importante: en firebase y acá debo tener los mismos nombres en cada categoría de producto, es decir producto.titulo, producto.precio, etc. Deberíamos importar nuestro json a firebase para evitar estos posibles inconvenientes

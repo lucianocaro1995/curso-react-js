@@ -12,9 +12,7 @@ const Checkout = () => {
     const [orderId, setOrderId] = useState("");
     const { cart, sumTotal } = useContext(CartContext);
 
-    //Creo la función generar orden, y después se la paso al botón de generar orden en el onClick
     const generarOrden = () => {
-        //Validación para que el usuario no deje inputs sin completar
         if (nombre.length === 0) {
             return false;
         }
@@ -34,10 +32,6 @@ const Checkout = () => {
         const total = sumTotal();
         const order = { buyer: buyer, items: items, date: date, total: total };
 
-
-        //Todos los datos del comprador lo vamos a guardar en una colección en firebase, podemos llamarla orders
-        //Insertar un Documento en Firestore. Donde dice "orders" tenemos que poner el nombre de nuestra colección a la que queremos crearle un documento
-        //Con esto nos enteramos que el usuario compró, y le podemos decir al final la orden de compra
         const db = getFirestore();
         const OrdersCollection = collection(db, "orders");
         addDoc(OrdersCollection, order).then(resultado => {
@@ -46,25 +40,8 @@ const Checkout = () => {
             .catch(resultado => {
                 console.log("Error! No se pudo completar la compra!");
             });
-
-        // Editar un Documento en Firestore
-        //const db = getFirestore();
-        /* const orderDoc = doc(db, "orders", orderId);
-        updateDoc(orderDoc, {total:10000, cant:2}); */
-
-        // Editar varios documentos en batch en Firestore
-        /* const batch = writeBatch(db);
-        const doc1 = doc(db, "orders", "guPBLl2K1oYLGD91YdfG");
-        const doc2 = doc(db, "orders", "hzEug3rxs2sqbvsINviL");
-        batch.update(doc1, {date:"2023-05-25 20:23"});
-        batch.update(doc2, {total:20000});
-        batch.commit(); */
     }
 
-    //Formulario pidiendo nombre, email, telefono y abajo un boton de submit
-    //En los inputs podemos utilizar el evento onInput para que cada vez que tipeamos, vamos almacenando el valor en un estado
-    //Capturamos el evento onInput y se lo vamos a pasar a la función modificadora (setNombre) del useState
-    //E es evento, target es un método con el cual determinamos de dónde se disparó el evento, value es la propiedad que captura el valor
     return (
         <>
             <Cart />

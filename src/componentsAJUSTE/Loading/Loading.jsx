@@ -5,5 +5,3 @@ const Loading = () => {
 }
 
 export default Loading
-
-//Acá tengo que poner un spinner

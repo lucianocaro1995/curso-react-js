@@ -1,4 +1,3 @@
-//import "./ItemList.css";
 import Item from "../Item/Item";
 
 const ItemList = ({ productos }) => {
@@ -10,5 +9,3 @@ const ItemList = ({ productos }) => {
 }
 
 export default ItemList
-
-//Acá generamos el map (del array que recibimos de ItemListContainer)

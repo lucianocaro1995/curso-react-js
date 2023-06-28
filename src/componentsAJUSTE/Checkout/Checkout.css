@@ -22,7 +22,6 @@
     margin: auto;
 }
 
-
 .checkout-titulo {
     margin-top: 50px;
     font-size: 35px;
@@ -44,11 +43,9 @@
     cursor: pointer;
     text-decoration: none;
     margin-left: auto;
-    /*Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:*/
     background-color: transparent;
     border: none;
     box-shadow: none;
-    /*Transición para el hover*/
     transition: all 0.5s ease;
 }
 
@@ -81,11 +78,9 @@
     height: 30px;
 }
 
-
 .checkout-form-div {
     margin-top: 25px;
 }
-
 
 .checkout-generar-orden {
     margin-left: auto;
@@ -106,7 +101,6 @@
     padding-top: 5px;
     padding-bottom: 5px;
     cursor: pointer;
-    /*Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:*/
     background-color: #ff64f7;
     border: 2px solid #ff64f7;
     box-shadow: none;

@@ -29,7 +29,6 @@
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    /*Necesito esto para lograr separar al máximo lo que está dentro del itemCount*/
     flex: 1;
 }
 
