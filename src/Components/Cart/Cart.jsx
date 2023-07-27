@@ -5,8 +5,10 @@ import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+    //Recibimos estos 5 métodos del contexto
     const { cart, removeItem, clear, cartTotal, sumTotal } = useContext(CartContext);
 
+    //Tenemos que hacer el renderizado del carrito con if para cuando está vacío, y return cuando tiene items dentro
     if (cartTotal() === 0) {
         return (
             <>
@@ -31,7 +33,7 @@ const Cart = () => {
         )
     }
 
-
+    //Tengo que armar el html del carrito acá
     return (
         <>
             <Header />

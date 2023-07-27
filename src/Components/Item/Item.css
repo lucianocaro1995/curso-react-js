@@ -1,3 +1,4 @@
+/*Si al elemento padre le pongo un borde, al elemento hijo debo ponerle las medidas del padre pero restando las del borde para que quede bien*/
 .card {
     height: 485px;
     width: 300px;
